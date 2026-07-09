@@ -1,5 +1,5 @@
 // ---------- Typing effect ----------
-const roles = ["Data Analyst", "Full Stack Developer", "ML Enthusiast", "Problem Solver"];
+const roles = ["Software Developer", "Full-Stack Developer", "Data Analyst"];
 const typedEl = document.getElementById('typed');
 let roleIndex = 0, charIndex = 0, deleting = false;
 
@@ -19,12 +19,43 @@ function typeLoop(){
 }
 typeLoop();
 
-// ---------- Scroll reveal ----------
+// ---------- Scroll reveal (staggered) ----------
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in-view'); });
-}, { threshold: 0.15 });
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('in-view');
+      // stagger children that opt in
+      const kids = e.target.querySelectorAll('.stagger-child');
+      kids.forEach((k, i) => { k.style.transitionDelay = (i * 90) + 'ms'; k.classList.add('in-view'); });
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
 reveals.forEach(el => io.observe(el));
+
+// ---------- Scroll progress bar ----------
+const progressBar = document.getElementById('scrollProgress');
+function updateProgress(){
+  if(!progressBar) return;
+  const scrollTop = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = total > 0 ? (scrollTop / total) * 100 : 0;
+  progressBar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+// ---------- Hero photo parallax on scroll ----------
+const heroPhoto = document.querySelector('.hero-photo');
+function parallaxHero(){
+  if(!heroPhoto) return;
+  const y = window.scrollY;
+  if(y < window.innerHeight){
+    heroPhoto.style.transform = `translateY(${y * 0.12}px)`;
+  }
+}
+window.addEventListener('scroll', parallaxHero, { passive: true });
 
 // ---------- Dot nav active state ----------
 const dots = document.querySelectorAll('.dotnav .dot');
@@ -100,6 +131,10 @@ if(canvas){
   resize();
   makeParticles();
   window.addEventListener('resize', () => { resize(); makeParticles(); });
+  window.addEventListener('load', () => { resize(); makeParticles(); });
+  if('ResizeObserver' in window){
+    new ResizeObserver(() => resize()).observe(document.body);
+  }
 
   function step(){
     ctx.clearRect(0,0,w,h);

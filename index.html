@@ -12,6 +12,7 @@
 
 <canvas id="particles"></canvas>
 <div class="cursor-glow" id="cursorGlow"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <nav class="dotnav" aria-label="Section navigation">
   <a href="#hero" class="dot active" data-label="Intro"></a>
@@ -47,7 +48,7 @@
       <div class="photo-card" id="photoCard">
         <div class="photo-glow"></div>
         <div class="photo-blob">
-          <img src="assets/santhiya.jpg" alt="Santhiya S" loading="eager">
+          <img src="santhiya.jpg" alt="Santhiya S" loading="eager">
         </div>
         <div class="photo-orbit">
           <div class="orbit-spin">
@@ -72,8 +73,7 @@
   <p class="eyebrow">01 — Summary</p>
   <h2 class="section-title">What I bring to the table</h2>
   <div class="card summary-card">
-    <p>Computer Science Engineering graduate <span class="tag-inline">CGPA 8.2</span> with hands-on experience in data analysis, full-stack web development, and AI/ML solutions. Skilled in Python, Java, SQL, JavaScript, Tableau, and Power BI, with a strong foundation in problem-solving and software development.</p>
-    <p>Built impactful projects including a Firebase-based job portal, an AI-powered solar fault detection system using YOLO, and a garage management system. Completed the Deloitte Data Analytics Virtual Internship — eager to deliver innovative, data-driven solutions as a Software Developer, Full-Stack Developer, or Data Analyst.</p>
+    <p>Computer Science Engineering graduate <span class="tag-inline">CGPA 8.2</span> skilled in Python, Java, SQL, JavaScript, Tableau, and Power BI — with hands-on experience across data analysis, full-stack development, and AI/ML. Built a Firebase job portal, a YOLO-based solar fault detection system, and a garage management system; completed the Deloitte Data Analytics Virtual Internship. Looking to deliver data-driven solutions as a Software Developer, Full-Stack Developer, or Data Analyst.</p>
   </div>
 
   <div class="edu-strip card">
@@ -96,47 +96,42 @@
 
   <div class="project-grid">
 
-    <article class="card project-card tilt-card">
+    <article class="card project-card tilt-card stagger-child">
       <div class="project-head">
         <span class="project-icon">💼</span>
         <h3>SmartHire — Smart Job Portal</h3>
       </div>
       <p class="project-meta">HTML5 · CSS3 · JavaScript · Firebase · EmailJS · April 2026</p>
       <ul class="check-list">
-        <li>Full-stack job portal enabling end-to-end job search, application tracking, and profile management on one platform</li>
-        <li>Secure Firebase-based authentication and profile management with seamless onboarding</li>
-        <li>Structured application tracking workflow with real-time DB updates and automated email notifications via EmailJS</li>
-        <li>Resume upload and personalized dashboards for a smoother candidate experience</li>
-        <li>Deployed on Firebase Hosting for high availability and fast load performance</li>
+        <li>Full-stack job portal — job search, application tracking, and profile management in one platform</li>
+        <li>Firebase authentication, real-time DB updates, and automated email alerts via EmailJS</li>
+        <li>Resume upload and personalized dashboards, deployed on Firebase Hosting</li>
       </ul>
       <a href="https://smart-job-portal-82772.web.app" target="_blank" rel="noopener" class="card-link">View live app →</a>
     </article>
 
-    <article class="card project-card tilt-card">
+    <article class="card project-card tilt-card stagger-child">
       <div class="project-head">
         <span class="project-icon">☀️</span>
         <h3>Intelligent PV Panel Monitoring</h3>
       </div>
       <p class="project-meta">Python · YOLO (Deep Learning) · HTML5 · CSS3 · JavaScript · MySQL · Feb–Apr 2026</p>
       <ul class="check-list">
-        <li>Real-time solar panel fault detection using YOLO to identify micro-cracks, hotspots, dirt, shading, and degradation</li>
-        <li>Transfer learning with fine-tuned anchor boxes and custom loss functions for small, complex defect patterns</li>
-        <li>Advanced image preprocessing and data augmentation for robustness under varying conditions</li>
-        <li>High precision and recall (mAP); generates visual annotations and maintenance reports in real time</li>
-        <li>Full-stack web interface for uploading panel images and receiving instant defect analysis</li>
+        <li>Real-time YOLO detection for micro-cracks, hotspots, dirt, shading, and degradation on solar panels</li>
+        <li>Transfer learning, fine-tuned anchor boxes, and augmentation pipelines for high precision and recall (mAP)</li>
+        <li>Full-stack web interface for image upload with instant defect analysis and reports</li>
       </ul>
     </article>
 
-    <article class="card project-card tilt-card">
+    <article class="card project-card tilt-card stagger-child">
       <div class="project-head">
         <span class="project-icon">🚗</span>
         <h3>Garage Management System</h3>
       </div>
       <p class="project-meta">HTML5 · CSS3 · JavaScript · Sep–Nov 2025</p>
       <ul class="check-list">
-        <li>Full-stack app for automated vehicle entry logging, service tracking, and digital billing</li>
-        <li>Responsive UI for real-time vehicle tracking and instant invoice generation for garage staff</li>
-        <li>Structured workflow for service status updates, reducing administrative overhead</li>
+        <li>Full-stack app for vehicle entry logging, service tracking, and digital billing</li>
+        <li>Responsive UI for real-time tracking and instant invoice generation for garage staff</li>
       </ul>
       <a href="https://github.com/Santhiya2207/Garage-Management-Systems.git" target="_blank" rel="noopener" class="card-link">View code →</a>
     </article>
@@ -150,28 +145,26 @@
   <h2 class="section-title">Internships</h2>
 
   <div class="timeline">
-    <div class="timeline-item">
+    <div class="timeline-item stagger-child">
       <div class="timeline-dot"></div>
       <div class="card">
         <h3>Data Analytics Virtual Intern</h3>
         <p class="muted">Deloitte (Forage) · Mar 2026 · Virtual</p>
         <ul class="check-list">
-          <li>Completed 2 data analysis simulation tasks using Tableau and Excel to analyze machine downtime data</li>
-          <li>Developed 2 interactive Tableau dashboards identifying downtime patterns across factories and device types</li>
-          <li>Created calculated fields in Tableau to visualize and classify operational performance metrics</li>
-          <li>Classified equality scores into 3 categories in Excel using conditional logic and formulas</li>
+          <li>2 simulation tasks analyzing machine downtime data using Tableau and Excel</li>
+          <li>2 interactive Tableau dashboards identifying downtime patterns across factories and device types</li>
+          <li>Calculated fields in Tableau and Excel conditional logic to classify performance metrics</li>
         </ul>
       </div>
     </div>
-    <div class="timeline-item">
+    <div class="timeline-item stagger-child">
       <div class="timeline-dot"></div>
       <div class="card">
         <h3>Data Analysis Intern (Academic)</h3>
         <p class="muted">HITAKEY TECH SOLUTION PRIVATE LIMITED · Sep 2025 – Nov 2025 · Trichy, TN</p>
         <ul class="check-list">
-          <li>Performed data cleaning and preprocessing on academic datasets using Excel and Python</li>
-          <li>Applied Excel functions (VLOOKUP, IF, sorting, filtering) to organize and process structured data</li>
-          <li>Developed Excel-based dashboards and charts to present key data insights to stakeholders</li>
+          <li>Data cleaning and preprocessing on academic datasets using Excel and Python</li>
+          <li>Excel functions (VLOOKUP, IF, sorting, filtering) and dashboards to present key insights</li>
         </ul>
       </div>
     </div>
@@ -184,35 +177,35 @@
   <h2 class="section-title">Technical toolkit</h2>
 
   <div class="skills-grid">
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Programming Languages</h4>
       <div class="stack"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C#</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">C</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Web Development</h4>
       <div class="stack"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Firebase</span><span class="chip">EmailJS</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Data Analysis &amp; BI</h4>
       <div class="stack"><span class="chip">Excel</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">R</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Databases</h4>
       <div class="stack"><span class="chip">MySQL</span><span class="chip">Firebase Realtime DB</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>AI / Machine Learning</h4>
       <div class="stack"><span class="chip">YOLO</span><span class="chip">CNN</span><span class="chip">Transfer Learning</span><span class="chip">Data Augmentation</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Core CS</h4>
       <div class="stack"><span class="chip">DSA</span><span class="chip">OOP</span><span class="chip">DBMS</span><span class="chip">OS</span><span class="chip">Networks</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Tools &amp; Platforms</h4>
       <div class="stack"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Google Cloud</span><span class="chip">UiPath</span><span class="chip">Salesforce</span></div>
     </div>
-    <div class="card skill-block">
+    <div class="card skill-block stagger-child">
       <h4>Software Development</h4>
       <div class="stack"><span class="chip">REST APIs</span><span class="chip">Auth</span><span class="chip">CRUD</span><span class="chip">Dashboards</span><span class="chip">Debugging</span></div>
     </div>
