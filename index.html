@@ -5,26 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santhiya S | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<canvas id="particles"></canvas>
-<div class="cursor-glow" id="cursorGlow"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 <nav class="dotnav" aria-label="Section navigation">
-  <a href="#hero" class="dot active" data-label="Intro"></a>
-  <a href="#summary" class="dot" data-label="Summary"></a>
-  <a href="#projects" class="dot" data-label="Projects"></a>
-  <a href="#experience" class="dot" data-label="Experience"></a>
-  <a href="#skills" class="dot" data-label="Skills"></a>
-  <a href="#certs" class="dot" data-label="Certifications"></a>
+  <a href="#hero" class="dot active" data-label="Intro" data-c="violet"></a>
+  <a href="#summary" class="dot" data-label="Summary" data-c="pink"></a>
+  <a href="#projects" class="dot" data-label="Projects" data-c="amber"></a>
+  <a href="#experience" class="dot" data-label="Experience" data-c="cyan"></a>
+  <a href="#skills" class="dot" data-label="Skills" data-c="emerald"></a>
+  <a href="#certs" class="dot" data-label="Certifications" data-c="pink"></a>
 </nav>
 
 <!-- HERO -->
-<header class="hero" id="hero">
+<header class="hero section-violet" id="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="hero-grid">
     <div class="hero-text">
       <p class="eyebrow"><span class="dot-live"></span> AVAILABLE FOR OPPORTUNITIES</p>
@@ -36,17 +36,11 @@
         <a href="https://linkedin.com/in/santhiya-s-b016122a4" target="_blank" rel="noopener" class="btn btn-outline magnetic">LinkedIn</a>
         <a href="https://github.com/Santhiya2207" target="_blank" rel="noopener" class="btn btn-outline magnetic">GitHub</a>
       </div>
-      <div class="mini-chart" aria-hidden="true">
-        <svg viewBox="0 0 300 70" class="pulse-chart">
-          <polyline class="pulse-line" points="0,55 30,50 60,58 90,35 120,42 150,18 180,28 210,12 240,25 270,8 300,15"/>
-        </svg>
-        <span class="mini-chart-label">// building things that ship</span>
-      </div>
     </div>
 
     <div class="hero-photo">
       <div class="photo-card" id="photoCard">
-        <div class="photo-glow"></div>
+        <div class="photo-ring"></div>
         <div class="photo-blob">
           <img src="santhiya.jpg" alt="Santhiya S" loading="eager">
         </div>
@@ -69,14 +63,15 @@
 <main>
 
 <!-- SUMMARY -->
-<section id="summary" class="reveal">
+<section id="summary" class="reveal section-pink">
+  <div class="blob b1"></div><div class="blob b2"></div>
   <p class="eyebrow">01 — Summary</p>
   <h2 class="section-title">What I bring to the table</h2>
-  <div class="card summary-card">
+  <div class="card summary-card stagger-child">
     <p>Computer Science Engineering graduate <span class="tag-inline">CGPA 8.2</span> skilled in Python, Java, SQL, JavaScript, Tableau, and Power BI — with hands-on experience across data analysis, full-stack development, and AI/ML. Built a Firebase job portal, a YOLO-based solar fault detection system, and a garage management system; completed the Deloitte Data Analytics Virtual Internship. Looking to deliver data-driven solutions as a Software Developer, Full-Stack Developer, or Data Analyst.</p>
   </div>
 
-  <div class="edu-strip card">
+  <div class="edu-strip card stagger-child">
     <div>
       <h3>Bachelor of Engineering — Computer Science Engineering</h3>
       <p class="muted">Pavendar Bharathidasan College of Engineering and Technology, Anna University, Trichy, TN</p>
@@ -90,7 +85,8 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="reveal">
+<section id="projects" class="reveal section-amber">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <p class="eyebrow">02 — Projects</p>
   <h2 class="section-title">Things I've built</h2>
 
@@ -140,7 +136,8 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" class="reveal">
+<section id="experience" class="reveal section-cyan">
+  <div class="blob b1"></div><div class="blob b2"></div>
   <p class="eyebrow">03 — Experience</p>
   <h2 class="section-title">Internships</h2>
 
@@ -172,7 +169,8 @@
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="reveal">
+<section id="skills" class="reveal section-emerald">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <p class="eyebrow">04 — Skills</p>
   <h2 class="section-title">Technical toolkit</h2>
 
@@ -213,12 +211,13 @@
 </section>
 
 <!-- CERTIFICATIONS + LANGUAGES -->
-<section id="certs" class="reveal">
+<section id="certs" class="reveal section-rose">
+  <div class="blob b1"></div><div class="blob b2"></div>
   <p class="eyebrow">05 — Certifications</p>
   <h2 class="section-title">Credentials &amp; languages</h2>
 
   <div class="two-col">
-    <div class="card">
+    <div class="card stagger-child">
       <ul class="check-list cert-list">
         <li>Python Programming — Microsoft via Skill India Digital Hub <span class="muted">(Mar 2026)</span></li>
         <li>Salesforce Developer — SmartBridge via Naan Mudhalvan, TNSDC <span class="muted">(Dec 2025)</span></li>
@@ -227,7 +226,7 @@
         <li>Machine Learning Project using R — Anna University <span class="muted">(May 2025)</span></li>
       </ul>
     </div>
-    <div class="card lang-card">
+    <div class="card lang-card stagger-child">
       <div class="lang-row"><span>Tamil</span><span class="muted">Native</span></div>
       <div class="lang-row"><span>English</span><span class="muted">Professional</span></div>
     </div>
@@ -236,9 +235,15 @@
 
 </main>
 
-<footer>
+<footer class="section-violet">
+  <div class="blob b1"></div>
   <p>⭐ Open to Internships &amp; Entry-Level Data Analyst / Developer roles</p>
-  <p class="muted small">Built by Santhiya S</p>
+  <div class="foot-links">
+    <a href="mailto:bavanabavana98@gmail.com" class="btn btn-outline magnetic">bavanabavana98@gmail.com</a>
+    <a href="https://linkedin.com/in/santhiya-s-b016122a4" target="_blank" rel="noopener" class="btn btn-outline magnetic">LinkedIn</a>
+    <a href="https://github.com/Santhiya2207" target="_blank" rel="noopener" class="btn btn-outline magnetic">GitHub</a>
+  </div>
+  <p class="muted small">Built by Santhiya S · © 2026</p>
 </footer>
 
 <script src="script.js"></script>

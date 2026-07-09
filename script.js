@@ -19,20 +19,41 @@ function typeLoop(){
 }
 typeLoop();
 
-// ---------- Scroll reveal (staggered) ----------
+// ---------- Scroll reveal (replays each time a slide is active) ----------
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
+    const kids = e.target.querySelectorAll('.stagger-child');
     if(e.isIntersecting){
       e.target.classList.add('in-view');
-      // stagger children that opt in
-      const kids = e.target.querySelectorAll('.stagger-child');
-      kids.forEach((k, i) => { k.style.transitionDelay = (i * 90) + 'ms'; k.classList.add('in-view'); });
-      io.unobserve(e.target);
+      kids.forEach((k, i) => { k.style.transitionDelay = (i * 100) + 'ms'; k.classList.add('in-view'); });
+    } else {
+      e.target.classList.remove('in-view');
+      kids.forEach(k => { k.style.transitionDelay = '0ms'; k.classList.remove('in-view'); });
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.35 });
 reveals.forEach(el => io.observe(el));
+
+// ---------- Keyboard slide navigation ----------
+const allSlides = [document.getElementById('hero'), ...document.querySelectorAll('main > section'), document.querySelector('footer')].filter(Boolean);
+function currentSlideIndex(){
+  let idx = 0, best = -Infinity;
+  allSlides.forEach((s, i) => {
+    const r = s.getBoundingClientRect();
+    const visible = Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0);
+    if(visible > best){ best = visible; idx = i; }
+  });
+  return idx;
+}
+window.addEventListener('keydown', (e) => {
+  if(!['ArrowDown','ArrowUp','PageDown','PageUp'].includes(e.key)) return;
+  e.preventDefault();
+  const idx = currentSlideIndex();
+  const dir = (e.key === 'ArrowDown' || e.key === 'PageDown') ? 1 : -1;
+  const next = allSlides[Math.min(Math.max(idx + dir, 0), allSlides.length - 1)];
+  if(next) next.scrollIntoView({ behavior:'smooth' });
+});
 
 // ---------- Scroll progress bar ----------
 const progressBar = document.getElementById('scrollProgress');
@@ -45,17 +66,6 @@ function updateProgress(){
 }
 window.addEventListener('scroll', updateProgress, { passive: true });
 updateProgress();
-
-// ---------- Hero photo parallax on scroll ----------
-const heroPhoto = document.querySelector('.hero-photo');
-function parallaxHero(){
-  if(!heroPhoto) return;
-  const y = window.scrollY;
-  if(y < window.innerHeight){
-    heroPhoto.style.transform = `translateY(${y * 0.12}px)`;
-  }
-}
-window.addEventListener('scroll', parallaxHero, { passive: true });
 
 // ---------- Dot nav active state ----------
 const dots = document.querySelectorAll('.dotnav .dot');
@@ -105,64 +115,4 @@ if(glow && window.matchMedia('(hover:hover)').matches){
   window.addEventListener('mousemove', (e) => {
     glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
   });
-}
-
-// ---------- Particle background ----------
-const canvas = document.getElementById('particles');
-if(canvas){
-  const ctx = canvas.getContext('2d');
-  let w, h, particles;
-  const COUNT = 55;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function resize(){
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = document.body.scrollHeight;
-  }
-  function makeParticles(){
-    particles = Array.from({length: COUNT}, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      r: Math.random() * 1.6 + 0.6,
-    }));
-  }
-  resize();
-  makeParticles();
-  window.addEventListener('resize', () => { resize(); makeParticles(); });
-  window.addEventListener('load', () => { resize(); makeParticles(); });
-  if('ResizeObserver' in window){
-    new ResizeObserver(() => resize()).observe(document.body);
-  }
-
-  function step(){
-    ctx.clearRect(0,0,w,h);
-    ctx.fillStyle = 'rgba(55,230,196,0.5)';
-    for(const p of particles){
-      p.x += p.vx; p.y += p.vy;
-      if(p.x < 0 || p.x > w) p.vx *= -1;
-      if(p.y < 0 || p.y > h) p.vy *= -1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fill();
-    }
-    // connecting lines for nearby particles
-    ctx.strokeStyle = 'rgba(90,169,255,0.08)';
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < 120){
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    if(!reduceMotion) requestAnimationFrame(step);
-  }
-  step();
 }
