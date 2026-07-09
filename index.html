@@ -4,176 +4,250 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santhiya S | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HERO -->
-<header class="hero">
-  <h1>👋 Hi, I'm Santhiya S</h1>
-  <p>🎓 Computer Science Graduate (2022–2026)</p>
-  <p>📊 Data Analyst | 💻 Full Stack Developer</p>
-  <p>📍 Thanjavur, Tamil Nadu</p>
+<canvas id="particles"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
 
-  <div class="links">
-    <a href="mailto:bavanabavana98@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/santhiya-s-b016122a4" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Santhiya2207" target="_blank">GitHub</a>
+<nav class="dotnav" aria-label="Section navigation">
+  <a href="#hero" class="dot active" data-label="Intro"></a>
+  <a href="#summary" class="dot" data-label="Summary"></a>
+  <a href="#projects" class="dot" data-label="Projects"></a>
+  <a href="#experience" class="dot" data-label="Experience"></a>
+  <a href="#skills" class="dot" data-label="Skills"></a>
+  <a href="#certs" class="dot" data-label="Certifications"></a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow"><span class="dot-live"></span> AVAILABLE FOR OPPORTUNITIES</p>
+      <h1 class="hero-title">Hi, I'm<br><span class="gradient-text">Santhiya S</span></h1>
+      <p class="hero-role"><span id="typed"></span><span class="cursor">|</span></p>
+      <p class="hero-loc">📍 Thanjavur, Tamil Nadu &nbsp;·&nbsp; B.E CSE, 2022–2026 &nbsp;·&nbsp; CGPA 8.2</p>
+      <div class="links">
+        <a href="mailto:bavanabavana98@gmail.com" class="btn btn-solid magnetic">Email me</a>
+        <a href="https://linkedin.com/in/santhiya-s-b016122a4" target="_blank" rel="noopener" class="btn btn-outline magnetic">LinkedIn</a>
+        <a href="https://github.com/Santhiya2207" target="_blank" rel="noopener" class="btn btn-outline magnetic">GitHub</a>
+      </div>
+      <div class="mini-chart" aria-hidden="true">
+        <svg viewBox="0 0 300 70" class="pulse-chart">
+          <polyline class="pulse-line" points="0,55 30,50 60,58 90,35 120,42 150,18 180,28 210,12 240,25 270,8 300,15"/>
+        </svg>
+        <span class="mini-chart-label">// building things that ship</span>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-card" id="photoCard">
+        <div class="photo-glow"></div>
+        <div class="photo-blob">
+          <img src="assets/santhiya.jpg" alt="Santhiya S" loading="eager">
+        </div>
+        <div class="photo-orbit">
+          <div class="orbit-spin">
+            <div class="orbit-dot d1"><span>PY</span></div>
+            <div class="orbit-dot d2"><span>SQL</span></div>
+            <div class="orbit-dot d3"><span>JS</span></div>
+            <div class="orbit-dot d4"><span>BI</span></div>
+          </div>
+        </div>
+        <div class="badge-float badge-1">🎓 CGPA 8.2</div>
+        <div class="badge-float badge-2">💼 Deloitte Intern</div>
+      </div>
+    </div>
   </div>
+  <a href="#summary" class="scroll-cue" aria-label="Scroll down">↓ scroll</a>
 </header>
 
-<!-- SUMMARY -->
-<section>
-  <h2>🧠 Professional Summary</h2>
-  <div class="card">
-    Computer Science Engineering graduate (CGPA 8.2) with strong skills in Python, SQL, and data analytics. 
-    Experienced in building full-stack web applications and real-world projects focused on improving efficiency 
-    through automation and structured data handling.
-  </div>
-</section>
+<main>
 
-<!-- EDUCATION -->
-<section>
-  <h2>🎓 Education</h2>
-  <div class="card">
-    <b>B.E – Computer Science Engineering</b><br>
-    Pavendar Bharathidasan College of Engineering and Technology<br>
-    Anna University (2022–2026)<br>
-    CGPA: 8.2 / 10
+<!-- SUMMARY -->
+<section id="summary" class="reveal">
+  <p class="eyebrow">01 — Summary</p>
+  <h2 class="section-title">What I bring to the table</h2>
+  <div class="card summary-card">
+    <p>Computer Science Engineering graduate <span class="tag-inline">CGPA 8.2</span> with hands-on experience in data analysis, full-stack web development, and AI/ML solutions. Skilled in Python, Java, SQL, JavaScript, Tableau, and Power BI, with a strong foundation in problem-solving and software development.</p>
+    <p>Built impactful projects including a Firebase-based job portal, an AI-powered solar fault detection system using YOLO, and a garage management system. Completed the Deloitte Data Analytics Virtual Internship — eager to deliver innovative, data-driven solutions as a Software Developer, Full-Stack Developer, or Data Analyst.</p>
+  </div>
+
+  <div class="edu-strip card">
+    <div>
+      <h3>Bachelor of Engineering — Computer Science Engineering</h3>
+      <p class="muted">Pavendar Bharathidasan College of Engineering and Technology, Anna University, Trichy, TN</p>
+    </div>
+    <div class="edu-meta">
+      <span>2022 – 2026</span>
+      <span class="pipe">·</span>
+      <span>CGPA 8.2 / 10.0</span>
+    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section>
-  <h2>🚀 Projects</h2>
+<section id="projects" class="reveal">
+  <p class="eyebrow">02 — Projects</p>
+  <h2 class="section-title">Things I've built</h2>
 
-  <!-- SmartHire -->
-  <div class="card">
-    <h3>💼 SmartHire – Smart Job Portal</h3>
+  <div class="project-grid">
 
-    <p>
-      Developed a full-stack job portal to simplify job searching, application tracking, 
-      and user profile management within a single platform.
-    </p>
+    <article class="card project-card tilt-card">
+      <div class="project-head">
+        <span class="project-icon">💼</span>
+        <h3>SmartHire — Smart Job Portal</h3>
+      </div>
+      <p class="project-meta">HTML5 · CSS3 · JavaScript · Firebase · EmailJS · April 2026</p>
+      <ul class="check-list">
+        <li>Full-stack job portal enabling end-to-end job search, application tracking, and profile management on one platform</li>
+        <li>Secure Firebase-based authentication and profile management with seamless onboarding</li>
+        <li>Structured application tracking workflow with real-time DB updates and automated email notifications via EmailJS</li>
+        <li>Resume upload and personalized dashboards for a smoother candidate experience</li>
+        <li>Deployed on Firebase Hosting for high availability and fast load performance</li>
+      </ul>
+      <a href="https://smart-job-portal-82772.web.app" target="_blank" rel="noopener" class="card-link">View live app →</a>
+    </article>
 
-    <p><b>Tech:</b> HTML, CSS, JavaScript, Firebase, EmailJS</p>
+    <article class="card project-card tilt-card">
+      <div class="project-head">
+        <span class="project-icon">☀️</span>
+        <h3>Intelligent PV Panel Monitoring</h3>
+      </div>
+      <p class="project-meta">Python · YOLO (Deep Learning) · HTML5 · CSS3 · JavaScript · MySQL · Feb–Apr 2026</p>
+      <ul class="check-list">
+        <li>Real-time solar panel fault detection using YOLO to identify micro-cracks, hotspots, dirt, shading, and degradation</li>
+        <li>Transfer learning with fine-tuned anchor boxes and custom loss functions for small, complex defect patterns</li>
+        <li>Advanced image preprocessing and data augmentation for robustness under varying conditions</li>
+        <li>High precision and recall (mAP); generates visual annotations and maintenance reports in real time</li>
+        <li>Full-stack web interface for uploading panel images and receiving instant defect analysis</li>
+      </ul>
+    </article>
 
-    <ul>
-      <li>✔ Implemented secure user authentication and profile system</li>
-      <li>✔ Built job application tracking with structured workflow</li>
-      <li>✔ Enabled resume upload and user dashboard features</li>
-      <li>✔ Integrated real-time updates and notifications</li>
-    </ul>
+    <article class="card project-card tilt-card">
+      <div class="project-head">
+        <span class="project-icon">🚗</span>
+        <h3>Garage Management System</h3>
+      </div>
+      <p class="project-meta">HTML5 · CSS3 · JavaScript · Sep–Nov 2025</p>
+      <ul class="check-list">
+        <li>Full-stack app for automated vehicle entry logging, service tracking, and digital billing</li>
+        <li>Responsive UI for real-time vehicle tracking and instant invoice generation for garage staff</li>
+        <li>Structured workflow for service status updates, reducing administrative overhead</li>
+      </ul>
+      <a href="https://github.com/Santhiya2207/Garage-Management-Systems.git" target="_blank" rel="noopener" class="card-link">View code →</a>
+    </article>
 
-    <a href="https://smart-job-portal-82772.web.app" target="_blank">🔗 View Project</a>
   </div>
-
-  <!-- Solar -->
-  <div class="card">
-    <h3>☀️ Solar Fault Detection System</h3>
-
-    <p>
-      Built an AI-based solution to detect faults in solar panels using object detection, 
-      improving monitoring accuracy and reducing manual inspection effort.
-    </p>
-
-    <p><b>Tech:</b> Python, YOLO, Computer Vision</p>
-
-    <ul>
-      <li>✔ Developed object detection model for fault identification</li>
-      <li>✔ Enabled real-time monitoring and analysis</li>
-      <li>✔ Reduced dependency on manual inspection</li>
-      <li>✔ Visualized detection results through interface</li>
-    </ul>
-  </div>
-
-  <!-- Garage -->
-  <div class="card">
-    <h3>🚗 Garage Management System</h3>
-
-    <p>
-      Designed a web-based system to manage vehicle service records, billing, 
-      and workflow operations efficiently.
-    </p>
-
-    <p><b>Tech:</b> HTML, CSS, JavaScript</p>
-
-    <ul>
-      <li>✔ Implemented vehicle entry and service tracking</li>
-      <li>✔ Automated billing calculations</li>
-      <li>✔ Reduced manual record handling</li>
-      <li>✔ Built responsive and user-friendly interface</li>
-    </ul>
-
-    <a href="https://github.com/Santhiya2207/Garage-Management-Systems.git" target="_blank">💻 View Code</a>
-  </div>
-
 </section>
 
-<!-- INTERNSHIP -->
-<section>
-  <h2>💼 Internship Experience</h2>
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <p class="eyebrow">03 — Experience</p>
+  <h2 class="section-title">Internships</h2>
 
-  <div class="card">
-    <b>Deloitte Data Analytics Virtual Internship</b>
-    <ul>
-      <li>Built Tableau dashboards for visualization</li>
-      <li>Analyzed datasets using Excel</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <b>Data Analysis Intern</b>
-    <ul>
-      <li>Performed data cleaning and preprocessing</li>
-      <li>Created reports and dashboards</li>
-    </ul>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="card">
+        <h3>Data Analytics Virtual Intern</h3>
+        <p class="muted">Deloitte (Forage) · Mar 2026 · Virtual</p>
+        <ul class="check-list">
+          <li>Completed 2 data analysis simulation tasks using Tableau and Excel to analyze machine downtime data</li>
+          <li>Developed 2 interactive Tableau dashboards identifying downtime patterns across factories and device types</li>
+          <li>Created calculated fields in Tableau to visualize and classify operational performance metrics</li>
+          <li>Classified equality scores into 3 categories in Excel using conditional logic and formulas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="card">
+        <h3>Data Analysis Intern (Academic)</h3>
+        <p class="muted">HITAKEY TECH SOLUTION PRIVATE LIMITED · Sep 2025 – Nov 2025 · Trichy, TN</p>
+        <ul class="check-list">
+          <li>Performed data cleaning and preprocessing on academic datasets using Excel and Python</li>
+          <li>Applied Excel functions (VLOOKUP, IF, sorting, filtering) to organize and process structured data</li>
+          <li>Developed Excel-based dashboards and charts to present key data insights to stakeholders</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section>
-  <h2>💻 Technical Skills</h2>
-  <div class="card">
-    <ul>
-      <li><b>Languages:</b> Python, C, SQL</li>
-      <li><b>Data Tools:</b> Pandas, NumPy, Excel, Power BI, Tableau</li>
-      <li><b>Web:</b> HTML, CSS, JavaScript</li>
-      <li><b>Tools:</b> Git, MS Office</li>
-      <li><b>Cloud:</b> Firebase, Google Cloud</li>
-    </ul>
+<section id="skills" class="reveal">
+  <p class="eyebrow">04 — Skills</p>
+  <h2 class="section-title">Technical toolkit</h2>
+
+  <div class="skills-grid">
+    <div class="card skill-block">
+      <h4>Programming Languages</h4>
+      <div class="stack"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C#</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">C</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>Web Development</h4>
+      <div class="stack"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Node.js</span><span class="chip">Firebase</span><span class="chip">EmailJS</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>Data Analysis &amp; BI</h4>
+      <div class="stack"><span class="chip">Excel</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">R</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>Databases</h4>
+      <div class="stack"><span class="chip">MySQL</span><span class="chip">Firebase Realtime DB</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>AI / Machine Learning</h4>
+      <div class="stack"><span class="chip">YOLO</span><span class="chip">CNN</span><span class="chip">Transfer Learning</span><span class="chip">Data Augmentation</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>Core CS</h4>
+      <div class="stack"><span class="chip">DSA</span><span class="chip">OOP</span><span class="chip">DBMS</span><span class="chip">OS</span><span class="chip">Networks</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>Tools &amp; Platforms</h4>
+      <div class="stack"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Google Cloud</span><span class="chip">UiPath</span><span class="chip">Salesforce</span></div>
+    </div>
+    <div class="card skill-block">
+      <h4>Software Development</h4>
+      <div class="stack"><span class="chip">REST APIs</span><span class="chip">Auth</span><span class="chip">CRUD</span><span class="chip">Dashboards</span><span class="chip">Debugging</span></div>
+    </div>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<section>
-  <h2>📜 Certifications</h2>
-  <div class="card">
-    <ul>
-      <li>Python Programming – Microsoft</li>
-      <li>Salesforce Developer – SmartBridge</li>
-      <li>Generative AI – Google Cloud</li>
-      <li>Machine Learning – Anna University</li>
-    </ul>
+<!-- CERTIFICATIONS + LANGUAGES -->
+<section id="certs" class="reveal">
+  <p class="eyebrow">05 — Certifications</p>
+  <h2 class="section-title">Credentials &amp; languages</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <ul class="check-list cert-list">
+        <li>Python Programming — Microsoft via Skill India Digital Hub <span class="muted">(Mar 2026)</span></li>
+        <li>Salesforce Developer — SmartBridge via Naan Mudhalvan, TNSDC <span class="muted">(Dec 2025)</span></li>
+        <li>Introduction to Generative AI — Google Cloud <span class="muted">(Dec 2025)</span></li>
+        <li>Microsoft Office Essentials — Naan Mudhalvan, TNSDC <span class="muted">(Oct 2025)</span></li>
+        <li>Machine Learning Project using R — Anna University <span class="muted">(May 2025)</span></li>
+      </ul>
+    </div>
+    <div class="card lang-card">
+      <div class="lang-row"><span>Tamil</span><span class="muted">Native</span></div>
+      <div class="lang-row"><span>English</span><span class="muted">Professional</span></div>
+    </div>
   </div>
 </section>
 
-<!-- LANGUAGES -->
-<section>
-  <h2>🌐 Languages</h2>
-  <div class="card">
-    Tamil – Native <br>
-    English – Professional
-  </div>
-</section>
+</main>
 
-<!-- FOOTER -->
 <footer>
-  ⭐ Open to Internships & Entry-Level Data Analyst / Developer Roles
+  <p>⭐ Open to Internships &amp; Entry-Level Data Analyst / Developer roles</p>
+  <p class="muted small">Built by Santhiya S</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
